@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Steam_Blocker_UI</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>DrbF8ZEVAAA6z8l.ico</ApplicationIcon>
+  </PropertyGroup>
+
+</Project>
