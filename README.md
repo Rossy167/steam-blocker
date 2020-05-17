@@ -4,8 +4,9 @@ Quick scripts to block Steam on Windows.
 
 ### Download
 
-https://github.com/Rossy167/steam-blocker/releases/tag/scripts
 https://github.com/Rossy167/steam-blocker/releases/tag/executable
+
+https://github.com/Rossy167/steam-blocker/releases/tag/scripts
 
 **These programs will not work unless ran as Admin.**
 Follow the instructions in TL;DR
