@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Diagnostics;
+using System.Diagnostics.Tracing;
 
 namespace Steam_Blocker_UI
 {
@@ -11,6 +12,8 @@ namespace Steam_Blocker_UI
         public MainWindow()
         {
             InitializeComponent();
+            CommandTextBox.IsReadOnly = true;
+
         }
 
 
