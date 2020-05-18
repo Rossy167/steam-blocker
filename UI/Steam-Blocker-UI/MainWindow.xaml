@@ -8,9 +8,19 @@
         ResizeMode="NoResize"
         Title="Steam-Blocker-UI" Height="125" Width="360">
     <Grid Margin="0,0,0,0">
-        <Button Name="BlockSteam" Content="Block Steam" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Height="44" Width="90" Click="Button_Click"/>
-        <Button Content="Unblock Steam" HorizontalAlignment="Left" Margin="105,18,0,0" VerticalAlignment="Top" Height="44" Width="90" Click="Button_Click_1"/>
-        <Button Content="Press this on first use" HorizontalAlignment="Left" Margin="200,18,0,0" VerticalAlignment="Top" Height="44" Width="132" Click="Button_Click_2"/>
-        <TextBox BorderThickness="0" Name="CommandTextBox" HorizontalAlignment="Left" Margin="10,67,0,0" Text="Waiting for Commmand" TextWrapping="Wrap" VerticalAlignment="Top" Width="291"/>
+        <Border Padding="10" BorderThickness="0"></Border>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="BlockSteam" Content="Block Steam" Click="Button_Click" Grid.Column="0"/>
+                <Button Content="Unblock Steam" HorizontalAlignment="Center" Click="Button_Click_1" Grid.Column="1"/>
+                <Button Content="Press this on first use" Click="Button_Click_2" Grid.Column="2"/>
+            </Grid>
+            <TextBox BorderThickness="0" x:Name="CommandTextBox" Text="Waiting for Commmand" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        </StackPanel>
     </Grid>
 </Window>
