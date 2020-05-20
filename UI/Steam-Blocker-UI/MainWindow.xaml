@@ -15,8 +15,8 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Name="BlockSteam" Content="Block Steam" Click="Button_Click" Grid.Column="0"/>
-                <Button Content="Unblock Steam" HorizontalAlignment="Center" Click="Button_Click_1" Grid.Column="1" Width="180"/>
+                <Button Name="BlockSteamButton" Content="Block Steam" Click="BlockSteam" Grid.Column="0"/>
+                <Button Name="UnblockSteamButton" Content="Unblock Steam" HorizontalAlignment="Center" Grid.Column="1" Width="180" Click="UnblockSteamButton_Click"/>
             </Grid>
             <TextBox BorderThickness="0" x:Name="CommandTextBox" Text="Waiting for Commmand" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
         </StackPanel>
