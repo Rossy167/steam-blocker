@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Steam_Blocker_UI"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Steam-Blocker-UI" Height="125" Width="360">
+        Title="Steam-Blocker-UI" Height="82" Width="360">
     <Grid Margin="0,0,0,0">
         <Border Padding="10" BorderThickness="0"></Border>
         <StackPanel>
@@ -14,11 +14,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Button Name="BlockSteam" Content="Block Steam" Click="Button_Click" Grid.Column="0"/>
-                <Button Content="Unblock Steam" HorizontalAlignment="Center" Click="Button_Click_1" Grid.Column="1"/>
-                <Button Content="Press this on first use" Click="Button_Click_2" Grid.Column="2"/>
+                <Button Content="Unblock Steam" HorizontalAlignment="Center" Click="Button_Click_1" Grid.Column="1" Width="180"/>
             </Grid>
             <TextBox BorderThickness="0" x:Name="CommandTextBox" Text="Waiting for Commmand" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
         </StackPanel>

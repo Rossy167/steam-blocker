@@ -39,12 +39,18 @@ namespace Steam_Blocker_UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             runPSCommand("Block-Steam");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\Program Files (x86)\\Common Files\\Steam\\SteamService.exe' -Profile any -Direction Outbound -Displayname 'Block-Steam Rossy' | Out-Null");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe' -Profile any -Direction Outbound -Displayname 'Block-Steam Rossy' | Out-Null");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\program files (x86)\\steam\\steam.exe' -Profile any -direction Outbound -Displayname 'Block-Steam Rossy' | Out-Null");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\Program Files (x86)\\Common Files\\Steam\\SteamService.exe' -Profile any -Direction Inbound -Displayname 'Block-Steam Rossy' | Out-Null");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\Program Files (x86)\\Steam\bin\\cef\\cef.win7x64\\steamwebhelper.exe' -Profile any -Direction Inbound -Displayname 'Block-Steam Rossy' | Out-Null");
+            runPSCommand("New-NetFirewallRule -Action block -Program 'C:\\program files (x86)\\steam\\steam.exe' -Profile any -direction Inbound -Displayname 'Block-Steam Rossy' | Out-Null");
             CommandTextBox.Text = "Steam has been blocked";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            runPSCommand("Unblock-Steam");
+            runPSCommand("Get-NetFirewallRule | Where-Object DisplayName -eq 'Block-Steam Rossy' | Remove-NetFirewallRule | Out-Null");
             CommandTextBox.Text = "Steam has been unblocked";
         }
 
