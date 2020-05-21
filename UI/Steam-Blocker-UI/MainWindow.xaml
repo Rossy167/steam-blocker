@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steam_Blocker_UI"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
-        Title="Steam-Blocker-UI" Height="82" Width="360">
+        ResizeMode="CanMinimize"
+        Title="Steam-Blocker-UI" Height="82" Width="360" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,0">
         <Border Padding="10" BorderThickness="0"></Border>
         <StackPanel>
