@@ -1,1 +1,0 @@
-The Save-BlockSteamToProfile.ps1 to profile script must be in the same directory as the built .exe for this to work.

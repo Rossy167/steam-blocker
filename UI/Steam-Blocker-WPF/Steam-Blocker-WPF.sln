@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steam-Blocker-WPF", "Steam-Blocker-WPF.csproj", "{268928AE-2F95-417A-A927-061EBB5D6921}"
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Steam-Blocker-Setup", "..\Steam-Blocker-Setup\Steam-Blocker-Setup.aiproj", "{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{268928AE-2F95-417A-A927-061EBB5D6921}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{268928AE-2F95-417A-A927-061EBB5D6921}.All|Any CPU.Build.0 = Release|Any CPU
+		{268928AE-2F95-417A-A927-061EBB5D6921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268928AE-2F95-417A-A927-061EBB5D6921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268928AE-2F95-417A-A927-061EBB5D6921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268928AE-2F95-417A-A927-061EBB5D6921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.All|Any CPU.ActiveCfg = DefaultBuild
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.All|Any CPU.Build.0 = DefaultBuild
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.Debug|Any CPU.Build.0 = DefaultBuild
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{805D0F71-9CC2-42D2-8F91-C8BDFA6D4897}.Release|Any CPU.Build.0 = DefaultBuild
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF603CDB-B5E6-48DC-8526-858C5BA3D37B}
+	EndGlobalSection
+EndGlobal

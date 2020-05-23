@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.0" version="17.0" Modules="simple" RootPath="." Language="en" Id="{BA157E4E-7034-401E-8518-A3214A5C1F83}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.0" version="17.0" Modules="simple" RootPath="." Language="en" Id="{313D276D-A955-425A-83A8-5AD788920089}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.dll" Value="..\Steam-Blocker-UI\bin\Debug\netcoreapp3.1"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.exe" Value="..\Steam-Blocker-UI\bin\Debug\netcoreapp3.1"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.runtimeconfig.json" Value="..\Steam-Blocker-UI\bin\Debug\netcoreapp3.1"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.dll" Value="Steam-Blocker-UI.dll"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.exe" Value="Steam-Blocker-UI.exe"/>
-    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.runtimeconfig.json" Value="Steam-Blocker-UI.runtimeconfig.json"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.exe" Value="..\Steam-Blocker-WPF\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.exe.config" Value="..\Steam-Blocker-WPF\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.pdb" Value="..\Steam-Blocker-WPF\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe" Value="Steam Blocker.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe.config" Value="Steam Blocker.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.pdb" Value="Steam Blocker.pdb"/>
     <ROW Property="ALLUSERS" Value="1"/>
-    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install Steam Blocker UI" ValueLocId="*"/>
-    <ROW Property="ARPCONTACT" Value="https://github.com/Rossy167"/>
-    <ROW Property="ARPPRODUCTICON" Value="ICON.exe" Type="8"/>
-    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/Rossy167/steam-blocker"/>
+    <ROW Property="ARPPRODUCTICON" Value="DrbF8ZEVAAA6z8l.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Rossy167"/>
-    <ROW Property="ProductCode" Value="1033:{0DF83119-9DC6-4CA3-B691-2AAFF2B48D7B} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{F56D6C52-DFD4-4B4C-A061-E859DC8768B8} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="Steam Blocker UI"/>
+    <ROW Property="ProductName" Value="Steam Blocker"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
-    <ROW Property="UpgradeCode" Value="{6C3CFB6B-5E7F-480D-95AC-4FFA93F85B72}"/>
+    <ROW Property="UpgradeCode" Value="{F9BF51AE-99A3-4349-9FB2-69CF3ABE7351}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
@@ -36,29 +33,29 @@
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
-    <ROW Directory="SteamBlockerUI_Dir" Directory_Parent="APPDIR" DefaultDir="STEAM-~1|Steam-Blocker-UI"/>
+    <ROW Directory="SteamBlockerWPF_Dir" Directory_Parent="APPDIR" DefaultDir="STEAM-~1|Steam-Blocker-WPF"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="APPDIR" ComponentId="{C6565175-24E6-4D4A-8251-3E2FFD5DF673}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="ProductInformation" ComponentId="{3D3E14AA-661F-4BE0-9BC6-74E027098B7D}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{F07C39C8-C4B8-4450-8DBB-1973CE3AC515}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="SteamBlockerUI_ContentOutput" ComponentId="{202E79DC-7BF7-411C-BA5C-5237282AC012}" Directory_="SteamBlockerUI_Dir" Attributes="256" KeyPath="SteamBlockerUI.exe"/>
-    <ROW Component="SteamBlockerUI_PrimaryOutput" ComponentId="{5358D520-6B39-418D-9C7C-2709E8FDE83E}" Directory_="SteamBlockerUI_Dir" Attributes="0" KeyPath="SteamBlockerUI.dll"/>
+    <ROW Component="APPDIR" ComponentId="{154FE721-91E6-4B73-9DF0-1B1163E15C2D}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="ProductInformation" ComponentId="{33D990B3-9705-4548-96B4-DCF9C4B8089B}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{B3931F8D-AD22-4966-B755-4718CCC7BEC4}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SteamBlockerWPF_PrimaryOutput" ComponentId="{4E958FE0-14C3-427D-AC24-DCD332F29C92}" Directory_="SteamBlockerWPF_Dir" Attributes="0" KeyPath="SteamBlockerWPF.exe"/>
+    <ROW Component="SteamBlockerWPF_SymbolsOutput" ComponentId="{6E11F3DC-CE8A-4868-BAFB-18867656A6C6}" Directory_="SteamBlockerWPF_Dir" Attributes="0" KeyPath="SteamBlockerWPF.pdb"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="SteamBlockerUI.dll" Component_="SteamBlockerUI_PrimaryOutput" FileName="STEAM-~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerUI.dll&gt;" SelfReg="false"/>
-    <ROW File="SteamBlockerUI.runtimeconfig.json" Component_="SteamBlockerUI_PrimaryOutput" FileName="STEAM-~2.JSO|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.runtimeconfig.json]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerUI.runtimeconfig.json&gt;" SelfReg="false"/>
-    <ROW File="SteamBlockerUI.exe" Component_="SteamBlockerUI_ContentOutput" FileName="STEAM-~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerUI.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="SteamBlockerWPF.exe" Component_="SteamBlockerWPF_PrimaryOutput" FileName="STEAM-~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerWPF.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="SteamBlockerWPF.exe.config" Component_="SteamBlockerWPF_PrimaryOutput" FileName="STEAM-~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerWPF.exe.config&gt;" SelfReg="false"/>
+    <ROW File="SteamBlockerWPF.pdb" Component_="SteamBlockerWPF_SymbolsOutput" FileName="STEAM-~2.PDB|[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.pdb]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SteamBlockerWPF.pdb&gt;" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
-    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerUI.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.dll]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerUI.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.exe]" Type="2" Content="0"/>
-    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerUI.runtimeconfig.json" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerUI.runtimeconfig.json]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerUI.runtimeconfig.json]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerWPF.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerWPF.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_SteamBlockerWPF.pdb" Path="[|AI_PROPPATH_DIR_PERBUILD_SteamBlockerWPF.pdb]\[|AI_PROPPATH_FILENAME_PERBUILD_SteamBlockerWPF.pdb]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -85,7 +82,6 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
-    <ROW Name="ShortcutFlags.dll" SourcePath="&lt;AI_CUSTACTS&gt;ShortcutFlags.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
@@ -117,23 +113,15 @@
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="AI_ApplyShortcutFlags" Type="3073" Source="ShortcutFlags.dll" Target="UpdateShortcutFlags" WithoutSeq="true"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
-    <ROW Action="AI_PinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="PinShortcuts"/>
-    <ROW Action="AI_PinToStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="PinToStartScreen" WithoutSeq="true"/>
-    <ROW Action="AI_PinToTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="PinToTaskbar" WithoutSeq="true"/>
-    <ROW Action="AI_PrepareShortcutFlags" Type="1" Source="ShortcutFlags.dll" Target="PrepareActionData"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="AI_UnpinFromStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromStartScreen" WithoutSeq="true"/>
-    <ROW Action="AI_UnpinFromTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromTaskbar" WithoutSeq="true"/>
-    <ROW Action="AI_UnpinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="UnpinShortcuts"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -141,12 +129,12 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="SteamBlockerUI_PrimaryOutput"/>
-    <ROW Feature_="MainFeature" Component_="SteamBlockerUI_ContentOutput"/>
+    <ROW Feature_="MainFeature" Component_="SteamBlockerWPF_PrimaryOutput"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="SteamBlockerWPF_SymbolsOutput"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="ICON.exe" SourcePath="..\Steam-Blocker-UI\ICON.ico" Index="0"/>
+    <ROW Name="DrbF8ZEVAAA6z8l.exe" SourcePath="..\Steam-Blocker-WPF\DrbF8ZEVAAA6z8l.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -155,9 +143,6 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
-    <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
-    <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
-    <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -176,8 +161,8 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="SteamBlockerUI" Directory_="DesktopFolder" Name="STEAMB~1|Steam Blocker UI" Component_="SteamBlockerUI_ContentOutput" Target="[#SteamBlockerUI.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="SteamBlockerUI_Dir" CustomFlags="1"/>
-    <ROW Shortcut="SteamBlockerUI_1" Directory_="SHORTCUTDIR" Name="STEAMB~1|Steam Blocker UI" Component_="SteamBlockerUI_ContentOutput" Target="[#SteamBlockerUI.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="SteamBlockerUI_Dir" CustomFlags="1"/>
+    <ROW Shortcut="SteamBlockerWPF" Directory_="SHORTCUTDIR" Name="STEAM-~1|Steam-Blocker-WPF" Component_="SteamBlockerWPF_PrimaryOutput" Target="[#SteamBlockerWPF.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="SteamBlockerWPF_1" Directory_="DesktopFolder" Name="STEAM-~1|Steam-Blocker-WPF" Component_="SteamBlockerWPF_PrimaryOutput" Target="[#SteamBlockerWPF.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -187,8 +172,8 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
-    <ROW ProjectId="{ea504875-5a86-450d-9004-ad7a7e505b6f}" ProjectName="Steam-Blocker-UI" OutputGroup="PrimaryOutput" OutputFile="SteamBlockerUI.dll"/>
-    <ROW ProjectId="{ea504875-5a86-450d-9004-ad7a7e505b6f}" ProjectName="Steam-Blocker-UI" OutputGroup="PrimaryOutput" OutputFile="SteamBlockerUI.runtimeconfig.json"/>
-    <ROW ProjectId="{ea504875-5a86-450d-9004-ad7a7e505b6f}" ProjectName="Steam-Blocker-UI" OutputGroup="ContentOutput" OutputFile="SteamBlockerUI.exe"/>
+    <ROW ProjectId="{268928ae-2f95-417a-a927-061ebb5d6921}" ProjectName="Steam-Blocker-WPF" OutputGroup="PrimaryOutput" OutputFile="SteamBlockerWPF.exe" OutputFileShortcut="SteamBlockerWPF"/>
+    <ROW ProjectId="{268928ae-2f95-417a-a927-061ebb5d6921}" ProjectName="Steam-Blocker-WPF" OutputGroup="PrimaryOutput" OutputFile="SteamBlockerWPF.exe.config"/>
+    <ROW ProjectId="{268928ae-2f95-417a-a927-061ebb5d6921}" ProjectName="Steam-Blocker-WPF" OutputGroup="SymbolsOutput" OutputFile="SteamBlockerWPF.pdb"/>
   </COMPONENT>
 </DOCUMENT>

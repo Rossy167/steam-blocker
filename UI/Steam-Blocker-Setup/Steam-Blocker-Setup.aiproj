@@ -2,32 +2,32 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8bacc246-6b47-4ad6-bb70-6890647b94b6</ProjectGuid>
+    <ProjectGuid>805d0f71-9cc2-42d2-8f91-c8bdfa6d4897</ProjectGuid>
     <OutputType>msi</OutputType>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Steam-Blocker-UI-Installer.aip</StartupFile>
+    <StartupFile>Steam-Blocker-Setup.aip</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <IsWindowsApplication>True</IsWindowsApplication>
-    <AssemblyName>Steam-Blocker-UI-Installer</AssemblyName>
-    <Name>Steam-Blocker-UI-Installer</Name>
-    <RootNamespace>Steam-Blocker-UI-Installer</RootNamespace>
+    <AssemblyName>Steam-Blocker-Setup</AssemblyName>
+    <Name>Steam-Blocker-Setup</Name>
+    <RootNamespace>Steam-Blocker-Setup</RootNamespace>
     <LoadFromTemplate>
     </LoadFromTemplate>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
   <ItemGroup>
-    <Compile Include="Steam-Blocker-UI-Installer.aip">
+    <Compile Include="Steam-Blocker-Setup.aip">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Steam-Blocker-UI\Steam-Blocker-UI.csproj">
-      <Name>Steam-Blocker-UI</Name>
-      <Project>{ea504875-5a86-450d-9004-ad7a7e505b6f}</Project>
+    <ProjectReference Include="..\Steam-Blocker-WPF\Steam-Blocker-WPF.csproj">
+      <Name>Steam-Blocker-WPF</Name>
+      <Project>{268928ae-2f95-417a-a927-061ebb5d6921}</Project>
       <Private>True</Private>
-      <OutputsToImport>PrimaryOutput;ContentOutput</OutputsToImport>
+      <OutputsToImport>PrimaryOutput;References;ContentOutput;DocumentationOutput;LocalizedResourcesOutput;SymbolsOutput;ComTypeLibraryOutput</OutputsToImport>
     </ProjectReference>
   </ItemGroup>
   <Target Name="Build">

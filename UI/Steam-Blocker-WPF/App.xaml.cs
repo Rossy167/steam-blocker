@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Steam_Blocker_UI
+namespace Steam_Blocker_WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

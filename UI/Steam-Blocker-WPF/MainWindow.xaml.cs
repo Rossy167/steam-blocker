@@ -3,22 +3,21 @@ using System.Windows;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
 
-namespace Steam_Blocker_UI
+namespace Steam_Blocker_WPF
 {
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
-        private string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-
         public MainWindow()
         {
             InitializeComponent();
             CommandTextBox.IsReadOnly = true;
-
         }
 
-
         private void runPSCommand(string command)
-        { 
+        {
             using (Process cmd = new Process())
             {
                 cmd.StartInfo.FileName = "cmd.exe";
