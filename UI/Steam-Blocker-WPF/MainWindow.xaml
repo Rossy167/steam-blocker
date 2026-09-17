@@ -3,22 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Steam_Blocker_WPF"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Steam-Blocker-UI" Height="82" Width="360" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,0">
-        <Border Padding="10" BorderThickness="0"></Border>
-        <StackPanel>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Button Name="BlockSteamButton" Content="Block Steam" Click="BlockSteam" Grid.Column="0"/>
-                <Button Name="UnblockSteamButton" Content="Unblock Steam" HorizontalAlignment="Center" Grid.Column="1" Width="180" Click="UnblockSteamButton_Click"/>
-            </Grid>
-            <TextBox BorderThickness="0" x:Name="CommandTextBox" Text="Waiting for Commmand" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        Title="Steam Blocker" Height="390" Width="620" WindowStartupLocation="CenterScreen"
+        Background="#10151C" Foreground="#F3F6FA">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,0,10,0" />
+            <Setter Property="Padding" Value="18,12" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="STEAM BLOCKER" Foreground="#65D6A3" FontSize="12" FontWeight="Bold" />
+        <TextBlock Grid.Row="1" Text="Family sharing, on your terms." FontSize="27" FontWeight="SemiBold" Margin="0,7,0,4" />
+        <TextBlock Grid.Row="2" Text="Control Steam's network access with rules that follow your actual installation." Foreground="#AEB9C6" FontSize="14" TextWrapping="Wrap" />
+        <Border Grid.Row="3" Background="#19232E" CornerRadius="8" Padding="16" Margin="0,22,0,20">
+            <StackPanel>
+                <TextBlock Text="CURRENT STATUS" Foreground="#8D9AAA" FontSize="11" FontWeight="Bold" />
+                <TextBlock x:Name="StatusText" Text="Ready to check Steam" FontSize="18" Margin="0,7,0,5" />
+                <TextBlock x:Name="DetailsText" Text="The app will locate Steam and report every operation." Foreground="#AEB9C6" TextWrapping="Wrap" />
+                <ProgressBar x:Name="ActivityBar" Height="3" Margin="0,17,0,0" IsHitTestVisible="False" Visibility="Collapsed" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Button x:Name="BlockSteamButton" Content="Block Steam" Click="BlockSteam" Background="#65D6A3" Foreground="#0D1714" />
+            <Button x:Name="UnblockSteamButton" Content="Unblock Steam" Click="UnblockSteamButton_Click" Background="#2A3744" Foreground="#F3F6FA" />
+            <Button x:Name="ValidateSteamButton" Content="Check installation" Click="ValidateSteamButton_Click" Background="Transparent" Foreground="#AEB9C6" />
         </StackPanel>
     </Grid>
 </Window>

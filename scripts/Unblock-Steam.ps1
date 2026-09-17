@@ -1,1 +1,1 @@
-Get-NetFirewallRule | Where-Object DisplayName -eq 'Block-Steam Rossy' | Remove-NetFirewallRule | Out-Null
+& (Join-Path $PSScriptRoot 'Steam-Blocker.ps1') -Mode Unblock
