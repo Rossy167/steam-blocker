@@ -2,7 +2,7 @@
 
 A Windows desktop utility and PowerShell toolkit for temporarily controlling Steam's network access through Windows Firewall rules.
 
-Steam Blocker began as a small household automation script for Steam Family Sharing. It has since been organized into a discoverable PowerShell engine, an elevated WPF interface, and an MSI packaging workflow.
+Steam Blocker began as a small household automation script for Steam Family Sharing. It has since been organized into a discoverable PowerShell engine and an elevated Tauri desktop interface. There are two ways to use it: the PowerShell cmdlet module, or the desktop application.
 
 > **Important:** This tool changes local Windows Firewall configuration. Steam may enforce Family Sharing rules server-side, so blocking network access cannot guarantee that multiple accounts can use a shared library simultaneously.
 
@@ -15,12 +15,12 @@ Steam Blocker began as a small household automation script for Steam Family Shar
 - Removes only rules created by Steam Blocker.
 - Requires and declares Administrator access explicitly through a Windows application manifest.
 - Reports PowerShell output, errors, and exit codes in the desktop UI.
-- Ships the PowerShell engine with the WPF application and MSI installer.
+- Bundles the PowerShell engine as a Tauri resource inside the desktop application.
 - Keeps command-line entry points available for automation and scripting.
 
 ## User Experience
 
-The WPF application provides three operations:
+The desktop application provides three operations:
 
 | Operation | Purpose |
 | --- | --- |
@@ -41,19 +41,19 @@ The application must run elevated because Windows Firewall administration requir
 
 ### Development
 
-- Windows with Visual Studio or MSBuild
-- .NET Framework 4.7.2 developer targeting pack
-- Advanced Installer, if building the MSI project
+- Windows with Visual Studio Build Tools or MSVC C++ Build Tools
+- Node.js LTS
+- Rust stable-msvc toolchain
 
-The repository can be inspected and PowerShell syntax-checked on other platforms, but the application itself is Windows-specific. WPF, Windows Firewall, the Windows registry, UAC, and Advanced Installer cannot be fully exercised on macOS.
+The repository can be inspected and PowerShell syntax-checked on other platforms, but the application itself is Windows-specific. Windows Firewall, the Windows registry, UAC, and a native Windows build of the desktop application cannot be fully exercised on macOS.
 
 ## Quick Start
 
 ### Desktop application
 
-1. Build or download a Windows release.
-2. Install or extract the application.
-3. Launch **Steam Blocker** and approve the Administrator prompt.
+1. Install [Node.js LTS](https://nodejs.org/) and the [Rust stable-msvc toolchain](https://www.rust-lang.org/tools/install) on Windows.
+2. From `UI/Steam-Blocker-Tauri/`, run `npm install`.
+3. Run `npm run tauri dev` to launch the application, or `npm run tauri build` to produce a Windows release, then approve the Administrator prompt when launching it.
 4. Select **Check installation** to confirm that Steam was found.
 5. Select **Block Steam** when a local offline window is needed.
 6. Select **Unblock Steam** when normal Steam connectivity should be restored.
@@ -94,7 +94,7 @@ This adds:
 ## How It Works
 
 ```text
-WPF application
+Tauri desktop application (Rust + React)
       |
       | starts elevated Windows PowerShell
       v
@@ -106,7 +106,7 @@ Steam-Blocker.ps1
       +-- returns output and a meaningful process exit code
 ```
 
-The WPF project includes `Steam-Blocker.ps1` as build content under `Scripts\`. The Advanced Installer project packages that file beside the executable so an installed copy does not depend on the repository or a separate script download.
+The Tauri project bundles `Steam-Blocker.ps1` as a Tauri resource, resolved at runtime through Tauri's resource directory API, so an installed copy does not depend on the repository or a separate script download.
 
 ## Project Structure
 
@@ -117,35 +117,32 @@ scripts/
   Unblock-Steam.ps1              Compatibility wrapper for unblocking
   Save-BlockSteamToProfile.ps1   Adds profile convenience commands
 
-UI/Steam-Blocker-WPF/
-  MainWindow.xaml                Desktop interface
-  MainWindow.xaml.cs             Process execution and status handling
-  app.manifest                   UAC elevation declaration
-  Steam-Blocker-WPF.csproj       .NET Framework 4.7.2 WPF project
-
-UI/Steam-Blocker-Setup/
-  Steam-Blocker-Setup.aip        Advanced Installer MSI definition
+UI/Steam-Blocker-Tauri/
+  src/App.tsx                    Desktop interface (three operations, status area)
+  src-tauri/src/lib.rs           Hardcoded check_installation/block_steam/unblock_steam commands
+  src-tauri/build.rs             Embeds the requireAdministrator Windows manifest
+  src-tauri/windows-app-manifest.xml   UAC elevation declaration
+  src-tauri/capabilities/default.json  Locked-down capability set (no shell-execute)
+  src-tauri/tauri.conf.json      Bundles scripts/Steam-Blocker.ps1 as a resource
 ```
 
 ## Build
 
-### WPF application
+### Desktop application (Tauri)
 
-From a Windows developer command prompt:
+From a Windows machine with Node.js and the Rust stable-msvc toolchain installed:
 
 ```powershell
-msbuild .\UI\Steam-Blocker-WPF\Steam-Blocker-WPF.csproj /p:Configuration=Release
+cd UI\Steam-Blocker-Tauri
+npm install
+npm run tauri build
 ```
 
-The executable and the copied PowerShell engine are produced under:
+The Windows executable, with `Steam-Blocker.ps1` bundled as a resource, is produced under:
 
 ```text
-UI\Steam-Blocker-WPF\bin\Release\
+UI\Steam-Blocker-Tauri\src-tauri\target\release\
 ```
-
-### MSI installer
-
-Open `UI\Steam-Blocker-WPF\Steam-Blocker-WPF.sln` on Windows with Advanced Installer integration available. The installer is configured to consume the Release output and package `Scripts\Steam-Blocker.ps1` beside the application executable.
 
 ## Limitations and Safety Notes
 
@@ -153,6 +150,7 @@ Open `UI\Steam-Blocker-WPF\Steam-Blocker-WPF.sln` on Windows with Advanced Insta
 - Blocking Steam while it is running may leave the client in an offline or partially connected state. Unblock Steam before normal online use.
 - The tool removes rules in the `Steam Blocker` firewall group. Do not reuse that group name for unrelated firewall rules on the same machine.
 - Review the detected executable list before relying on the block operation in a production or shared environment.
+- An unsigned build of the desktop application will trigger Windows SmartScreen on first run. Code signing removes that warning but is a recurring cost and is out of scope for this project.
 
 ## Credits
 
